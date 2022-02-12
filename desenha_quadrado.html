@@ -1,0 +1,58 @@
+<canvas width=600 height=400>
+	
+</canvas>
+
+<script >
+	
+	var tela= document.querySelector("canvas");
+	var pincel=tela.getContext("2d");
+	
+	// fazer fundo cinza
+	pincel.fillStyle="grey";
+	pincel.fillRect(0,0,600,400);
+
+	function desenharQuadrado(x,y,cor){
+	pincel.fillStyle=cor;
+
+	pincel.strokeStyle="black";
+
+	pincel.strokeRect(x,y,50,50);
+	pincel.fillRect(x,y,50,50);
+
+	}
+	 // exemplo com for
+
+	 for(var x=0; x<600; x= x+50){
+	 	desenharQuadrado(x,0,"green");
+	 }
+	/* exemplo com condição com while
+
+	var x=0;
+
+	while(x<600){
+		
+		desenharQuadrado(x,0,"green");
+
+		x=x+50;	
+	}
+	*/
+	
+	
+	
+	/*
+	pincel.fillStyle="green";
+
+	pincel.strokeStyle="black";
+
+	pincel.strokeRect(0,0,50,50);
+	pincel.fillRect(0,0,50,50);
+
+	pincel.strokeRect(50,0,100,50);
+	pincel.fillRect(50,0,100,50);
+
+	pincel.strokeRect(100,0,50,50);
+	pincel.fillRect(100,0,50,50);
+	*/
+
+
+</script>

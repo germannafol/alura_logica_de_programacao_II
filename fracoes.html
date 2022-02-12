@@ -1,0 +1,54 @@
+<canvas width ="600" height="600"> </canvas>	
+
+<script>
+
+	var tela= document.querySelector("canvas");
+	var pincel=tela.getContext("2d");
+		
+	
+	function desenhaQuadrado (x,y,tamanho,cor){
+		//desenha apenas o quadrado base
+		pincel.fillStyle=cor;
+		pincel.fillRect(x,y,tamanho,tamanho);
+		pincel.fill();
+		pincel.strokeRect(x,y,tamanho,tamanho);
+		
+
+	}
+
+	function quadradoVB(unidadesV,unidadesB){
+		var x=0;
+		var y=0;
+		var tamanho=100;
+
+
+		while(unidadesV >0){
+		desenhaQuadrado(x,y,tamanho,"green");
+		x=x+tamanho;
+		unidadesV=unidadesV-1;
+		
+		console.log("unidades: " + unidadesV +" x: "+x+" y: "+y);
+	}
+		while(unidadesB>0){
+
+		desenhaQuadrado(x,y,tamanho,"white");
+		x=x+tamanho;
+		unidadesB=unidadesB-1;
+		
+		console.log("unidades: " + unidadesB +" x: "+x+" y: "+y);
+	}
+	} 
+
+	function fracao(u,t){
+
+		quadradoVB(u,t-u);
+	}
+	
+	var pNumero= parseInt(prompt("Qual o numerador da fração? (numerador/denominador)"));
+	var sNumero= parseInt(prompt("Qual o denominador da fração (numerador/denominador)?"));
+	
+	fracao(pNumero,sNumero);
+
+
+
+</script>
